@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Black Screen with Play Button</title>
+  <title>Black Screen with Red Play Button</title>
   <style>
     html, body {
       margin: 0;
@@ -15,32 +15,27 @@
       justify-content: center;
     }
 
-    button {
-      background-color: transparent;
-      border: 2px solid white;
-      color: white;
-      font-size: 24px;
-      padding: 10px 20px;
+    #playButton {
+      width: 0;
+      height: 0;
+      border-left: 40px solid red;
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
       cursor: pointer;
-    }
-
-    button:hover {
-      background-color: white;
-      color: black;
     }
   </style>
 </head>
 <body>
-  <button id="playButton">Play</button>
+  <div id="playButton"></div>
   <audio id="audio" src="AAf9ADHCrmPX4SOTurX3jdh (mp3cut.net).mp3"></audio>
 
   <script>
-    const button = document.getElementById('playButton');
+    const playButton = document.getElementById('playButton');
     const audio = document.getElementById('audio');
 
-    button.addEventListener('click', () => {
+    playButton.addEventListener('click', () => {
       audio.play();
-      button.style.display = 'none';
+      playButton.style.display = 'none';
     });
   </script>
 </body>
